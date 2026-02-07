@@ -149,6 +149,21 @@
 
         .about p + p { margin-top: 1rem; }
 
+        /* Feature image */
+        .feature-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-caption {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-style: italic;
+            text-align: center;
+        }
+
         /* Stats grid */
         .stats {
             display: grid;
@@ -283,6 +298,11 @@
     </div>
 
     <div class="content">
+
+        <div class="section">
+            <img src="images/creation-of-claw.jpg" alt="The Creation of Claw - Michelangelo's Creation of Adam with a lobster claw" class="feature-image">
+            <p class="feature-caption">The Creation of Claw 🦞</p>
+        </div>
 
         <div class="section">
             <div class="section-header">About</div>
