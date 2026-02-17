@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TreadForce Tyres — Premium Tyres & Fitment | Johannesburg</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #e63946;
+  --primary-dark: #c1121f;
+  --dark: #0a0a0a;
+  --darker: #050505;
+  --card: #111111;
+  --card-hover: #1a1a1a;
+  --border: #222;
+  --text: #f1f1f1;
+  --text-muted: #999;
+  --accent: #ff6b35;
+  --gold: #ffd700;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--darker); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+/* Navigation */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(5,5,5,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.logo { font-size: 1.5rem; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+.nav-cta { background: var(--primary); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; }
+.nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 6rem 2rem 4rem; background: radial-gradient(ellipse at 30% 50%, rgba(230,57,70,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(255,107,53,0.05) 0%, transparent 50%), var(--darker); overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px; background: radial-gradient(circle, rgba(230,57,70,0.06) 0%, transparent 70%); border-radius: 50%; }
+.hero-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+.hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem; }
+.hero-text h1 .highlight { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 500px; line-height: 1.7; }
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { padding: 0.9rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; font-family: inherit; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(230,57,70,0.3); }
+.btn-outline { background: transparent; color: var(--text); border: 2px solid var(--border); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.hero-visual { display: flex; justify-content: center; align-items: center; }
+.tyre-display { width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #333, #111); border: 20px solid #222; box-shadow: inset 0 0 60px rgba(0,0,0,0.8), 0 0 80px rgba(230,57,70,0.1), 0 20px 60px rgba(0,0,0,0.5); position: relative; animation: float 6s ease-in-out infinite; }
+.tyre-display::before { content: ''; position: absolute; inset: 20px; border-radius: 50%; border: 3px solid #333; background: radial-gradient(circle at 40% 40%, #292929, #0a0a0a); }
+.tyre-display::after { content: 'TF'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 900; color: #333; letter-spacing: 4px; }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
+.hero-stats { display: flex; gap: 3rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.stat { text-align: left; }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--primary); }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem; }
+
+/* Brands */
+.brands { padding: 4rem 2rem; background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.brands-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.brands-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 2rem; }
+.brands-grid { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; opacity: 0.5; }
+.brand-item { font-size: 1.3rem; font-weight: 700; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; transition: opacity 0.3s; }
+.brand-item:hover { opacity: 1; color: var(--text); }
+
+/* Section styles */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--primary); margin-bottom: 1rem; font-weight: 600; }
+.section-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; }
+.section-subtitle { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; line-height: 1.7; margin-bottom: 3rem; }
+
+/* Tyre finder */
+#finder { background: var(--dark); }
+.finder-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 3rem; }
+.finder-grid { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 1.5rem; align-items: end; }
+.finder-field label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600; }
+.finder-field select { width: 100%; padding: 0.9rem 1rem; background: var(--darker); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 1rem; font-family: inherit; appearance: none; cursor: pointer; }
+.finder-field select:focus { outline: none; border-color: var(--primary); }
+.finder-btn { padding: 0.9rem 2.5rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; font-family: inherit; transition: all 0.3s; white-space: nowrap; }
+.finder-btn:hover { background: var(--primary-dark); }
+
+/* Tyres grid */
+#tyres { background: var(--darker); }
+.tyres-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.tyre-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+.tyre-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.tyre-image { height: 200px; background: radial-gradient(circle at 50% 50%, #1a1a1a, #0a0a0a); display: flex; align-items: center; justify-content: center; position: relative; }
+.tyre-icon { width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #2a2a2a, #111); border: 10px solid #1a1a1a; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); }
+.tyre-badge { position: absolute; top: 1rem; right: 1rem; background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.tyre-badge.gold { background: linear-gradient(135deg, #b8860b, #ffd700); color: #000; }
+.tyre-info { padding: 1.5rem; }
+.tyre-brand { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); font-weight: 600; }
+.tyre-name { font-size: 1.2rem; font-weight: 700; margin: 0.5rem 0; }
+.tyre-specs { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+.tyre-specs span { display: inline-block; background: var(--darker); padding: 0.2rem 0.6rem; border-radius: 4px; margin: 0.2rem 0.3rem 0.2rem 0; font-size: 0.75rem; }
+.tyre-price { display: flex; align-items: baseline; gap: 0.5rem; }
+.tyre-price .price { font-size: 1.5rem; font-weight: 800; }
+.tyre-price .unit { font-size: 0.8rem; color: var(--text-muted); }
+.tyre-price .was { font-size: 0.9rem; color: var(--text-muted); text-decoration: line-through; }
+
+/* Services */
+#services { background: var(--dark); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+.service-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+.service-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.service-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; }
+.service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+.service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+.service-price { margin-top: 1rem; font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+
+/* Why us */
+#why { background: var(--darker); }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.why-card { display: flex; gap: 1.5rem; padding: 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s; }
+.why-card:hover { border-color: var(--primary); }
+.why-num { font-size: 2.5rem; font-weight: 900; color: var(--primary); opacity: 0.3; line-height: 1; min-width: 50px; }
+.why-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.why-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Reviews */
+#reviews { background: var(--dark); }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+.review-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+.review-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+.review-author { display: flex; align-items: center; gap: 1rem; }
+.review-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+.review-name { font-weight: 600; font-size: 0.9rem; }
+.review-loc { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Contact */
+#contact { background: var(--darker); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.contact-info { display: flex; flex-direction: column; gap: 2rem; }
+.contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-icon { width: 45px; height: 45px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.contact-item h4 { font-weight: 600; margin-bottom: 0.3rem; }
+.contact-item p { font-size: 0.9rem; color: var(--text-muted); }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.contact-form input, .contact-form textarea { padding: 0.9rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 1rem; font-family: inherit; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); }
+.contact-form textarea { height: 120px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+/* Footer */
+footer { padding: 3rem 2rem; background: var(--darker); border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-text { font-size: 0.85rem; color: var(--text-muted); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+.footer-links a:hover { color: var(--primary); }
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-text p { margin: 0 auto 2rem; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { order: -1; }
+  .tyre-display { width: 250px; height: 250px; }
+  .finder-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .mobile-toggle { display: block; }
+}
+@media (max-width: 640px) {
+  .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">TREAD<span>FORCE</span></a>
+    <ul class="nav-links">
+      <li><a href="#finder">Find Tyres</a></li>
+      <li><a href="#tyres">Shop</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <button class="mobile-toggle">☰</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Premium Tyres.<br><span class="highlight">Unbeatable Prices.</span></h1>
+      <p>Johannesburg's trusted tyre specialists. From economy runabouts to high-performance sports cars — fitted, balanced, and on the road in under an hour.</p>
+      <div class="hero-buttons">
+        <a href="#finder" class="btn btn-primary">Find Your Tyres</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">15K+</div>
+          <div class="stat-label">Tyres Fitted</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4.9★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">45min</div>
+          <div class="stat-label">Avg Fit Time</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="tyre-display"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Brands -->
+<div class="brands">
+  <div class="brands-inner">
+    <div class="brands-label">Authorised Dealer For</div>
+    <div class="brands-grid">
+      <div class="brand-item">Bridgestone</div>
+      <div class="brand-item">Continental</div>
+      <div class="brand-item">Goodyear</div>
+      <div class="brand-item">Michelin</div>
+      <div class="brand-item">Pirelli</div>
+      <div class="brand-item">Dunlop</div>
+      <div class="brand-item">Hankook</div>
+    </div>
+  </div>
+</div>
+
+<!-- Tyre Finder -->
+<section id="finder">
+  <div class="section-inner">
+    <div class="section-label">Tyre Finder</div>
+    <div class="section-title">Find the Perfect Tyre</div>
+    <div class="section-subtitle">Enter your tyre size or select your vehicle to see matching tyres with live pricing.</div>
+    <div class="finder-box">
+      <div class="finder-grid">
+        <div class="finder-field">
+          <label>Width</label>
+          <select>
+            <option>Select width</option>
+            <option>155</option><option>165</option><option>175</option><option>185</option>
+            <option>195</option><option>205</option><option>215</option><option>225</option>
+            <option>235</option><option>245</option><option>255</option><option>265</option>
+          </select>
+        </div>
+        <div class="finder-field">
+          <label>Profile</label>
+          <select>
+            <option>Select profile</option>
+            <option>30</option><option>35</option><option>40</option><option>45</option>
+            <option>50</option><option>55</option><option>60</option><option>65</option><option>70</option>
+          </select>
+        </div>
+        <div class="finder-field">
+          <label>Rim Size</label>
+          <select>
+            <option>Select rim</option>
+            <option>13"</option><option>14"</option><option>15"</option><option>16"</option>
+            <option>17"</option><option>18"</option><option>19"</option><option>20"</option>
+          </select>
+        </div>
+        <button class="finder-btn">Search →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Tyres -->
+<section id="tyres">
+  <div class="section-inner">
+    <div class="section-label">Popular Choices</div>
+    <div class="section-title">Best-Selling Tyres</div>
+    <div class="section-subtitle">Hand-picked favourites based on performance, value, and customer reviews.</div>
+    <div class="tyres-grid">
+      <div class="tyre-card">
+        <div class="tyre-image">
+          <div class="tyre-icon"></div>
+          <span class="tyre-badge">Best Seller</span>
+        </div>
+        <div class="tyre-info">
+          <div class="tyre-brand">Continental</div>
+          <div class="tyre-name">ContiPremiumContact 6</div>
+          <div class="tyre-specs">
+            <span>205/55 R16</span><span>91V</span><span>AA Rating</span>
+          </div>
+          <div class="tyre-price">
+            <span class="price">R1,849</span>
+            <span class="unit">per tyre</span>
+          </div>
+        </div>
+      </div>
+      <div class="tyre-card">
+        <div class="tyre-image">
+          <div class="tyre-icon"></div>
+          <span class="tyre-badge gold">Premium</span>
+        </div>
+        <div class="tyre-info">
+          <div class="tyre-brand">Michelin</div>
+          <div class="tyre-name">Pilot Sport 5</div>
+          <div class="tyre-specs">
+            <span>225/45 R17</span><span>94Y</span><span>XL</span>
+          </div>
+          <div class="tyre-price">
+            <span class="price">R2,699</span>
+            <span class="unit">per tyre</span>
+          </div>
+        </div>
+      </div>
+      <div class="tyre-card">
+        <div class="tyre-image">
+          <div class="tyre-icon"></div>
+          <span class="tyre-badge">Value Pick</span>
+        </div>
+        <div class="tyre-info">
+          <div class="tyre-brand">Hankook</div>
+          <div class="tyre-name">Ventus Prime 4</div>
+          <div class="tyre-specs">
+            <span>195/65 R15</span><span>91H</span><span>Touring</span>
+          </div>
+          <div class="tyre-price">
+            <span class="was">R1,299</span>
+            <span class="price">R1,099</span>
+            <span class="unit">per tyre</span>
+          </div>
+        </div>
+      </div>
+      <div class="tyre-card">
+        <div class="tyre-image">
+          <div class="tyre-icon"></div>
+          <span class="tyre-badge">4x4</span>
+        </div>
+        <div class="tyre-info">
+          <div class="tyre-brand">Bridgestone</div>
+          <div class="tyre-name">Dueler A/T 697</div>
+          <div class="tyre-specs">
+            <span>235/75 R15</span><span>104S</span><span>All-Terrain</span>
+          </div>
+          <div class="tyre-price">
+            <span class="price">R2,149</span>
+            <span class="unit">per tyre</span>
+          </div>
+        </div>
+      </div>
+      <div class="tyre-card">
+        <div class="tyre-image">
+          <div class="tyre-icon"></div>
+        </div>
+        <div class="tyre-info">
+          <div class="tyre-brand">Goodyear</div>
+          <div class="tyre-name">EfficientGrip Performance 2</div>
+          <div class="tyre-specs">
+            <span>205/55 R16</span><span>91V</span><span>Fuel Saver</span>
+          </div>
+          <div class="tyre-price">
+            <span class="price">R1,649</span>
+            <span class="unit">per tyre</span>
+          </div>
+        </div>
+      </div>
+      <div class="tyre-card">
+        <div class="tyre-image">
+          <div class="tyre-icon"></div>
+          <span class="tyre-badge gold">Performance</span>
+        </div>
+        <div class="tyre-info">
+          <div class="tyre-brand">Pirelli</div>
+          <div class="tyre-name">P Zero</div>
+          <div class="tyre-specs">
+            <span>245/40 R18</span><span>97Y</span><span>Run Flat</span>
+          </div>
+          <div class="tyre-price">
+            <span class="price">R3,899</span>
+            <span class="unit">per tyre</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <div class="section-title">Professional Fitment Services</div>
+    <div class="section-subtitle">State-of-the-art equipment, certified technicians, and a waiting lounge with free WiFi and coffee.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Tyre Fitting</h3>
+        <p>Professional mounting and balancing on the latest Hunter equipment. All sizes, from 13" city cars to 22" SUVs.</p>
+        <div class="service-price">From R120 per tyre</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚖️</div>
+        <h3>Wheel Balancing</h3>
+        <p>Precision spin-balancing eliminates vibrations and extends tyre life. Includes weight check and rebalance.</p>
+        <div class="service-price">R80 per wheel</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>Wheel Alignment</h3>
+        <p>3D laser alignment on all four wheels. Prevents uneven wear, improves handling and fuel economy.</p>
+        <div class="service-price">R450 (2-wheel) / R650 (4-wheel)</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛞</div>
+        <h3>Puncture Repair</h3>
+        <p>Industry-standard mushroom plug repairs. We assess the damage and advise honestly — no unnecessary replacements.</p>
+        <div class="service-price">R150 per tyre</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Tyre Rotation</h3>
+        <p>Regular rotation extends tyre life by up to 20%. We follow manufacturer-recommended patterns.</p>
+        <div class="service-price">R200 (set of 4)</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏎️</div>
+        <h3>Performance Upgrades</h3>
+        <p>Upsizing, plus-sizing, and performance tyre consultation. We'll find the perfect setup for your driving style.</p>
+        <div class="service-price">Free consultation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-label">Why TreadForce</div>
+    <div class="section-title">Built on Trust. Driven by Service.</div>
+    <div class="section-subtitle">We've been keeping Joburg moving since 2012. Here's why customers keep coming back.</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div>
+          <h3>No Upselling. Ever.</h3>
+          <p>If your tyres have life left, we'll tell you. We'd rather earn your trust today and your business tomorrow.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div>
+          <h3>Price Match Guarantee</h3>
+          <p>Found the same tyre cheaper? Show us the quote and we'll match it — no questions asked.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div>
+          <h3>While-You-Wait Service</h3>
+          <p>Most jobs done in under 45 minutes. Relax in our lounge with free coffee, WiFi, and DSTV.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <div>
+          <h3>After-Hours Emergency</h3>
+          <p>Blowout at night? Call our emergency line. We offer mobile fitment within a 30km radius of our shop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="section-label">Customer Reviews</div>
+    <div class="section-title">What Joburg Says About Us</div>
+    <div class="section-subtitle">Don't just take our word for it. Here's what our customers have to say.</div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Popped in without an appointment and they had my Polo Vivo sorted in 30 minutes. Great price on the Hankooks too. These guys are honest — they actually told me my rear tyres still had 4mm left."</div>
+        <div class="review-author">
+          <div class="review-avatar">TM</div>
+          <div>
+            <div class="review-name">Thabo Molefe</div>
+            <div class="review-loc">Benoni</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Finally found a tyre place that doesn't try to sell me stuff I don't need. Had a puncture on my Fortuner and they fixed it for R150 instead of pushing a new R3k tyre on me. Respect."</div>
+        <div class="review-author">
+          <div class="review-avatar">SK</div>
+          <div>
+            <div class="review-name">Samantha Kruger</div>
+            <div class="review-loc">Boksburg</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Set of Continental PremiumContacts for my 3 Series. Price was R800 less than BMW wanted. Perfectly fitted, zero vibrations. Been back twice since — once for my wife's car, once for my mom's."</div>
+        <div class="review-author">
+          <div class="review-avatar">JN</div>
+          <div>
+            <div class="review-name">Johan Naudé</div>
+            <div class="review-loc">Kempton Park</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get in Touch</div>
+    <div class="section-title">Visit Us or Request a Quote</div>
+    <div class="section-subtitle">Drop in anytime — no appointment needed for most services.</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Visit Our Workshop</h4>
+            <p>124 Commissioner Street<br>Boksburg North, 1459<br>Gauteng, South Africa</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Call Us</h4>
+            <p>011 823 4567<br>Emergency: 082 456 7890</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Trading Hours</h4>
+            <p>Mon–Fri: 07:30 – 17:30<br>Saturday: 08:00 – 13:00<br>Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>info@treadforce.co.za<br>quotes@treadforce.co.za</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back to you within the hour.');">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+        </div>
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Vehicle Make & Model">
+        <input type="text" placeholder="Tyre Size (e.g. 205/55 R16)">
+        <textarea placeholder="Tell us what you need..."></textarea>
+        <button type="submit" class="btn btn-primary" style="border-radius:10px;">Send Enquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text">© 2026 TreadForce Tyres. All rights reserved. | VAT No: 4210356789</div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Careers</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
